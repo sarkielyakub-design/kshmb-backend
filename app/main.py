@@ -99,22 +99,20 @@ app = FastAPI(
 # CORS
 # =========================================
 
+from fastapi.middleware.cors import CORSMiddleware
+
 app.add_middleware(
     CORSMiddleware,
-
     allow_origins=[
         "http://localhost:3000",
         "http://127.0.0.1:3000",
-        "http://172.20.10.3:3000",
+
+        "https://kshmb-frontend.vercel.app",
     ],
-
     allow_credentials=True,
-
     allow_methods=["*"],
-
     allow_headers=["*"],
 )
-
 # =========================================
 # ROUTERS
 # =========================================
